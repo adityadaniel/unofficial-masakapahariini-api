@@ -27,15 +27,16 @@ route.get('/api', (req, res) => {
 route.get('/api/recipes', controller.newRecipes);
 route.get('/api/recipes/:page', controller.newRecipesByPage);
 route.get('/api/recipes-length/', controller.newRecipesLimit);
-route.get('/api/categorys/recipes', controller.category);
-route.get('/api/articles/new', controller.article);
-route.get('/api/categorys/recipes/:key', controller.recipesByCategory);
-route.get('/api/categorys/recipes/:key/:page', controller.recipesCategoryByPage);
+route.get('/api/categories/recipes', controller.category);
+route.get('/api/categories/recipes/:key', controller.recipesByCategory);
+route.get('/api/categories/recipes/:key/:page', controller.recipesCategoryByPage);
 route.get('/api/recipe/:key', controller.recipesDetail);
 route.get('/api/search/', controller.searchRecipes);
-route.get('/api/categorys/article', controller.articleCategory);
-route.get('/api/categorys/article/:key', controller.articleByCategory);
+route.get('/api/categories/article', controller.articleCategory);
+route.get('/api/categories/article/:key', controller.articleByCategory);
 route.get('/api/article/:tag/:key', controller.articleDetails);
+route.get('/api/featured/recipes', controller.featuredRecipes);
+route.get('/api/featured/articles', controller.article);
 
 route.get('*', (req, res) => {
     res.status(404).json({
