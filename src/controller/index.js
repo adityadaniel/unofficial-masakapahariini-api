@@ -24,7 +24,7 @@ const fetchRecipes = (req, res, response) => {
                 thumb : thumb,
                 key : key,
                 times : duration,
-                portion : servings,
+                serving : servings,
                 difficulty : difficulty
             });
         });
