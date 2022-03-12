@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const route = router;
+const cors = require('cors');
 
 const controller = require('../controller/index');
 
@@ -24,6 +25,7 @@ route.get('/api', (req, res) => {
     });
 });
 
+route.all('*', cors());
 route.get('/api/recipes', controller.newRecipes);
 route.get('/api/recipes/:page', controller.newRecipesByPage);
 route.get('/api/recipes-length/', controller.newRecipesLimit);
